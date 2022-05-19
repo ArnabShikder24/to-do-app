@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import { toast } from 'react-toastify';
 
 const ToDo = () => {
     const [todo, setTodo] = useState([]);
@@ -38,7 +39,10 @@ const ToDo = () => {
                 body: JSON.stringify(update)
             })
             .then(res => res.json())
-            .thne(data =>  console.log(data))
+            .then(data =>  {
+                console.log(data)
+                toast("Task completed")  
+            })
         }
     }
 

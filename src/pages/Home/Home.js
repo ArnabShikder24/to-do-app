@@ -23,7 +23,7 @@ const Home = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data)
-            toast("Wow so easy!")        
+            toast("Task Added")        
         })
     }
 
