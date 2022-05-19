@@ -1,0 +1,14 @@
+.to_do {
+  width: 500px !important;
+}
+.to_do_textarea {
+  width: 500px;
+  border: none;
+  background-color: #41b49f28;
+}
+.todo-card {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
