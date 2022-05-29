@@ -1,16 +1,21 @@
 import React from 'react';
 import { toast } from 'react-toastify';
 import ToDo from '../../component/ToDo/ToDo';
+import {useAuthState} from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
 
 const Home = () => {
+    const [user] = useAuthState(auth);
 
     const addToDo = e => {
         e.preventDefault()
         const name = e.target.name.value;
         const description = e.target.des.value;
+        const email = user?.email;
         const info = {
             name,
             description,
+            email,
             textDecoration: 'none'
         }
         fetch('https://ancient-plateau-88249.herokuapp.com/todo', {

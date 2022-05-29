@@ -1,5 +1,5 @@
 .to_do {
-  width: 500px !important;
+  width: 500px;
 }
 .to_do_textarea {
   width: 500px;
@@ -11,4 +11,35 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+@media only screen and (max-width: 530px) {
+  .to_do,
+  .to_do_textarea {
+     width: 400px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .to_do,
+  .to_do_textarea {
+     width: 350px;
+  }
+}
+@media only screen and (max-width: 360px) {
+  .to_do,
+  .to_do_textarea {
+     width: 300px;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .to_do,
+  .to_do_textarea {
+     width: 280px;
+  }
+}
+@media only screen and (max-width: 290px) {
+  .to_do,
+  .to_do_textarea {
+     width: 100%;
+  }
 }

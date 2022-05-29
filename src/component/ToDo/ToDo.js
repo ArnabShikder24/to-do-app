@@ -1,14 +1,17 @@
 import React, {useState, useEffect} from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const ToDo = () => {
     const [todo, setTodo] = useState([]);
+    const [user] = useAuthState(auth);
 
     useEffect(() => {
-        fetch('https://ancient-plateau-88249.herokuapp.com/todo')
+        fetch(`https://ancient-plateau-88249.herokuapp.com/todo?userEmail=${user?.email}`)
         .then(res => res.json())
         .then(data => setTodo(data))
-    }, [todo])
+    }, [todo, user])
 
     const handleDelete = id => {
         const agree = window.confirm('Do you want to delete it?')
